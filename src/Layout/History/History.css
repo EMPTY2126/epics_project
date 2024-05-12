@@ -58,6 +58,11 @@
   padding-top: 20px;
 }
 
+.posn{
+  margin-left: 300px; 
+  margin-top: 50px;
+}
+
 .history-item {
   width: 500px;
   /* text-align: center; */

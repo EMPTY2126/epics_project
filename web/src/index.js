@@ -15,11 +15,17 @@ const landmarkColors = {
 const gestureStrings = {
   'thumbs_up': 'Thubmb UP',
   'victory': 'Peace',
-  'rock': 'folded',
+  'rock': 'Folded',
   'paper': 'Hii',
-  'scissors': 'scissors',
-  'dont': 'dont',
-  'indexPointGesture':'Index Pointing'
+  'scissors': 'Peace',
+  'dont': 'Dont',
+  'indexP':'Index Pointing',
+  'yes':'Yes',
+  'four':'Four',
+  'three':'Three',
+  'love' :'Love',
+  'super':'Good',
+  'c' : 'C'
 }
 
 const base = ['Horizontal ', 'Diagonal Up ']
@@ -52,15 +58,12 @@ async function main() {
     right: document.querySelector("#pose-result-right"),
     left: document.querySelector("#pose-result-left")
   }
-  // configure gesture estimator
-  // add "✌🏻" and "👍" as sample gestures
   const knownGestures = [
     fp.Gestures.VictoryGesture,
     fp.Gestures.ThumbsUpGesture,
     ...gestures
   ]
   const GE = new fp.GestureEstimator(knownGestures)
-  // load handpose model
   const detector = await createDetector()
   console.log("mediaPose model loaded")
   const pair = new Set()
@@ -77,15 +80,12 @@ async function main() {
     resultLayer.left.innerText = resultLayer.right.innerText = gestureStrings.dont
     pair.clear()    
   }
-  // main estimation loop
   const estimateHands = async () => {
 
-    // clear canvas overlay
     ctx.clearRect(0, 0, config.video.width, config.video.height)
     resultLayer.right.innerText = ''
     resultLayer.left.innerText = ''
 
-    // get hand landmarks from video
     const hands = await detector.estimateHands(video, {
       flipHorizontal: true
     })
@@ -104,21 +104,18 @@ async function main() {
 
         const result = predictions.gestures.reduce((p, c) => (p.score > c.score) ? p : c)
         const found = gestureStrings[result.name]
-        // find gesture with highest match score
         const chosenHand = hand.handedness.toLowerCase()
-        // updateDebugInfo(predictions.poseData, chosenHand)
         
         const data = {hand : chosenHand,
-          gesture : result.name};
-        ///efefewfw
+          gesture : found};
 
         if(hand1!=chosenHand || prev!=result.name)
         {
-          console.log(`Recognized gesture: ${result.name} (${found}) +  ${chosenHand}`);
+          console.log(`Recognized gesture: (${found}) +  ${chosenHand}`);
           prev = result.name
           hand1 = chosenHand
           try{
-            await axios.post('http://localhost:3300/v1/history', data, {
+            await axios.post('http://localhost:3300/v1/History', data, {
               headers: {
             'Content-Type': 'application/json',},
             withCredentials: true,
@@ -166,7 +163,6 @@ async function initCamera(width, height, fps) {
   video.width = width
   video.height = height
 
-  // get video stream
   const stream = await navigator.mediaDevices.getUserMedia(constraints)
   video.srcObject = stream
 

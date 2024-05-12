@@ -11,10 +11,10 @@
 }
 
 .card_login {
-    background: black; /* Set background color to black */
+    background: black;
     opacity: 0.7;
     width: 600px;
-    height: 480px;
+    height: calc(100vh - 200px);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,30 +25,26 @@
 }
 
 .inp {
+    width: 80%;
     margin-top: 20px;
     background-color: inherit;
-    border: none;
-    border-bottom: 1px solid;
-    border-bottom-color: #DCF2F1;
-    outline: none;
-    margin-bottom: 30px;
     color: #FFD1E3;
-    height: 50px;
+    height: 10px;
     font-size: 40px;
 }
 
-.inp:focus {
+/* .inp:focus {
     border-bottom-color:#98E4FF;
     color: rgb(255, 255, 255);
     font-size: 40px;
-}
+} */
 
-.inp::placeholder {
-    color: #C4E4FF; /* Change to your desired color */
-}
+/* .inp::placeholder {
+    color: #C4E4FF;
+} */
 
 .btn_login {
-    background-color: black; /* Set button background color to black */
+    background-color: black;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -67,12 +63,12 @@
     transform: scale(1.1);
     color: white; /* Change text color on hover */
 }
-
+/* 
 .login_icons {
     font-size: 40px;
     padding-top: 5px;
     margin-bottom: 20px;
-}
+} */
 
 .lr {
     width: 600px;

@@ -24,7 +24,7 @@ function History() {
   }, []);
 
   const historyItems = history === "please login" 
-    ? <h1>{history}</h1>
+    ? <h1 className='posn'>{history}</h1>
     : (
         <div className="history-grid">
           {Array.isArray(history) && history.map((item, index) => (
