@@ -1,58 +1,82 @@
-.contact_form {
-  margin: 20px auto; /* Add top margin to create space */
-  width: 70%;
+
+h1 {
+  text-align: center;
+  color: #a8a8a8;
+}
+
+form {
   max-width: 600px;
-  padding: 30px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  padding-top: 50px;
+  text-align: center;
+  margin: 20px auto;
 }
 
-
-.contact_textarea,
-.nameinput,
-.emailinput {
-  width: 100%;
-  height: 50px;
-  border: none;
+input,
+textarea {
+  border: 0;
+  outline: 0;
+  padding: 1em;
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.1);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 16px;
-  color: #333;
-  padding: 12px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-}
-
-.contact_form label {
-  font-size: 16px;
   display: block;
-  margin-bottom: 8px;
-}
-
-.contact_textarea {
-  height: 120px;
-}
-
-input[type=submit] {
   width: 100%;
-  height: 48px;
-  border: none;
-  border-radius: 8px;
-  background-color: #007bff;
-  color: #fff;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 20px;
+  margin-top: 1em;
+  font-family: 'Merriweather', sans-serif;
+  resize: none;
+}
+
+
+#input-submit {
+  width: 635px;
+  color: white;
+  background: #e74c3c;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-input[type=submit]:hover {
-  background-color: #0056b3;
+#input-submit:hover {
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-::-webkit-input-placeholder {
-  color: #666;
+textarea {
+  height: 126px;
+}
+
+.half {
+  float: left;
+  width: 48%;
+  margin-bottom: 1em;
+}
+
+.right {
+  width: 50%;
+}
+
+.left {
+  margin-right: 2%;
+}
+
+@media (max-width: 480px) {
+  .half {
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+  }
+}
+
+.cf:before,
+.cf:after {
+  content: ' ';
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cont_img{
+  width: 100vw;
+  height: 300px;
+}
+
+.hone{
+  margin-top: 10px;
+  font-size: 100px;
 }

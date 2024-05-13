@@ -29,7 +29,7 @@ function Serv() {
         <div className="service-section">
           <h2 className="section-title">SIMPLE SETTING</h2>
           <div className="service-box">
-            <Link to='/history' className="service-link">
+            <Link to='/History' className="service-link">
               <FaCog className="service-icon" />
               <span className="service-title">History</span>
             </Link>

@@ -62,11 +62,6 @@
               <input id="inp4" className='inp' placeholder={`Re-Password :`}  onChange={(e)=>setRePass(e.target.value)}/><br/>
               <button className='btn_login' onClick={postRegister} type='Submit'>Register</button>
               <h3 style={{cursor:'pointer'}} onClick={()=>setLr('login')}>Go to login</h3>
-              {/* <div className='login_icons'>
-                <FontAwesomeIcon icon={faGoogle} />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <FontAwesomeIcon icon={faFacebook} />
-              </div> */}
         </div>  
       </div>
       </>

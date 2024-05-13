@@ -7,9 +7,7 @@ function about() {
 
   return (
     <>
-        {/* <Navbar/> */}
         <div className="col-md-12 about">
-        <h1>About</h1>
 
         <ul className='about_ul'>
             <br/>
