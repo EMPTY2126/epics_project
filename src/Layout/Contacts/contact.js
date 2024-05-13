@@ -114,10 +114,6 @@ function Contact() {
         </div>
         <input type='submit' value='Submit' id='input-submit' />
       </form>
-
-    <div >
-      <img className='cont_img' src={cont} alt='contact' />
-    </div>
     </div>
   )
 }
